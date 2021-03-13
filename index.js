@@ -9,7 +9,7 @@ const tf = require('@tensorflow/tfjs');
 
 async function models() {
     model = undefined;
-    model = await tf.loadLayersModel()
+    model = await tf.loadLayersModel('https://raw.githubusercontent.com/mf4lsb/test_modeljson/main/tfjs_files/model.json');
 
 
     // var model;
@@ -18,11 +18,26 @@ async function models() {
     // });
     // console.log(model);
 
-    // const prediction = model.predict(tf.tensor([4129,82580,990.96]));
-    // console.log(prediction);
+    console.log("model loaded");
+    var output;
+    input = tf.tensor2d([[4129,82580,990.96]]);
+    output = model.predict(input);
+    const outputData = output.dataSync();
+    console.log(outputData[0]);
+    
+
+    // model.predict(tf.tensor([[4129,82580,990.96]])).print();
 
     // tf.tensor([4129,82580,990.96]).print();
 
 }
 
-models();
+models = models();
+
+function prediction() {
+    var output;
+    input = tf.tensor2d([4129,82580,990.96]);
+    output = model.predict(input);
+    console.log(output);
+}
+
