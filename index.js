@@ -9,6 +9,7 @@ const tf = require('@tensorflow/tfjs');
 
 async function models() {
     model = undefined;
+    console.log("MASUK");
     model = await tf.loadLayersModel('https://raw.githubusercontent.com/mf4lsb/test_modeljson/main/tfjs_files/model.json');
 
 
