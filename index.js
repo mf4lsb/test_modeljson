@@ -34,10 +34,10 @@ async function models() {
 
 models = models();
 
-function prediction() {
-    var output;
-    input = tf.tensor2d([4129,82580,990.96]);
-    output = model.predict(input);
-    console.log(output);
-}
+// function prediction() {
+//     var output;
+//     input = tf.tensor2d([4129,82580,990.96]);
+//     output = model.predict(input);
+//     console.log(output);
+// }
 
